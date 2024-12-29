@@ -1,20 +1,21 @@
 {
-    "cairo":"القاهرة",
-    "min":"الصغري",
-    "max":"الكبري",
-    "clear sky":"سماء صافية",
-    "light rain":"أمطا متوسطة",
-    "few clouds" :"سحب متوسطة ",
-    "rain":"أمطار",
-    "shower rain":"أمطار غزيرة",
-    "snow":"ثلج",
-    "mist":"غائم",
-    "thunderstorm":"عاصفة رعدية",
-    "broken clouds" :"غيام جزئي"
-
-
-
-
-
-
+        "cairo":"القاهرة",
+        "min":"الصغري",
+        "max":"الكبري",
+        "clear sky":"سماء صافية",
+        "light rain":"أمطا متوسطة",
+        "few clouds" :"سحب متوسطة ",
+        "rain":"أمطار",
+        "shower rain":"أمطار غزيرة",
+        "snow":"ثلج",
+        "mist":"غائم",
+        "thunderstorm":"عاصفة رعدية",
+        "broken clouds" :"غيام جزئي"
+    
+    
+    
+    
+    
+    
+    
 }
