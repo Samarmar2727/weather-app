@@ -1,0 +1,19 @@
+/*#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+*/
+
+body{
+  font-family: "Roboto", serif;
+  background-color:#f5e0d3
+
+  
+
+}
+
+body:lang(ar){
+   font-family: "IBM Plex Sans Arabic", serif;;
+}
