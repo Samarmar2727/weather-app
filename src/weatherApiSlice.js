@@ -1,19 +1,17 @@
-import { createSlice } from '@reduxjs/toolkit'
+import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 
-const initialState = {
- result: "empty",
-}
+export const weatherApi = createApi({
+  reducerPath: 'weatherApi', 
+  baseQuery: fetchBaseQuery({
+    baseUrl: 'https://api.openweathermap.org/data/2.5/',
+  }),
+  endpoints: (builder) => ({
+    getWeather: builder.query({
+  
+      query: () =>
+        `weather?lat=30.044420&lon=31.235712&appid=2605a582f805a3f5d0d757c43e065b16`,
+    }),
+  }),
+});
 
-export const weatherApiSlice = createSlice({
-  name: 'weather',
-  initialState,
-  reducers: {
-    
-     
-  },
-})
-
-// Action creators are generated for each case reducer function
-export const {} = weatherApiSlice.actions
-
-export default weatherApiSlice.reducer
+export const { useGetWeatherQuery } = weatherApi;
