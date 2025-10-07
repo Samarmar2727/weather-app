@@ -1,0 +1,15 @@
+{
+    "cairo": "Cairo",
+    "min": "Min",
+    "max": "Max",
+    "clear sky": "Clear Sky",
+    "light rain": "Light Rain",
+    "few clouds": "Few Clouds",
+    "rain": "Rain",
+    "shower rain": "Heavy Rain",
+    "snow": "Snow",
+    "mist": "Cloudy",
+    "thunderstorm": "Thunderstorm",
+    "broken clouds": "Partial Clouds"
+  }
+  

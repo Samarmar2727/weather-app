@@ -1,19 +1,30 @@
+
 import * as React from "react"
-import Container from '@mui/material/Container';
+ import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
 import CloudIcon from '@mui/icons-material/Cloud';
 import Button from '@mui/material/Button';
 import axios from "axios"
-//import moment from "moment";
-//import "moment/locale/ar";
-import { format} from "date-fns";
-import { ar, enUS } from "date-fns/locale";
+//import moment from "moment"
+//import "moment/min/locales"
 import { useTranslation } from 'react-i18next';
+import { format } from "date-fns";
+import { ar, enUS } from "date-fns/locale";
+
 import './App.css'
 
- 
+//redux import 
+ import{useSelector, useDispatch} from "react-redux";
+
 
 function App() {
+// redux call 
+const dispatch = useDispatch();
+
+const result = useSelector((state)=>{
+  console.log("this is the", state)
+  return state.result
+})
   const { t, i18n } = useTranslation();
   const[locale, setLocal] = React.useState("en")
   const [dateAndTime, setDateAndTime] = React.useState("")
@@ -25,8 +36,6 @@ function App() {
     icon:null
   })
 
-  let cancelAxios = null
-
   function formatDate(lang) {
     const currentDate = new Date();
     const localeSetting = lang === "ar" ? ar : enUS;
@@ -35,7 +44,7 @@ function App() {
       locale: localeSetting,
     });
   }
-  
+
   function handleLanguageClick() {
     const newLocale = locale === "en" ? "ar" : "en";
     setLocal(newLocale);
@@ -49,13 +58,11 @@ function App() {
     const formattedDate = formatDate(locale);
     setDateAndTime(formattedDate);
   }, [locale]);
-  
 
-  React.useEffect(()=>{
-    i18n.changeLanguage(locale)
-  },[])
-  
+    
+  let cancelAxios = null
   React.useEffect(() => {
+    i18n.changeLanguage(locale)
   axios.get('https://api.openweathermap.org/data/2.5/weather?lat=30.044420&lon=31.235712&appid=2605a582f805a3f5d0d757c43e065b16',
     {
       cancelToken:new axios.CancelToken((cancel) =>{
